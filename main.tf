@@ -4,7 +4,7 @@ data "aws_ami" "amazon_linux" {
 
     filter {
         name = "name"
-        values = ["al2023-ami-*-kernal-6.1-x86_64"]
+        values = ["al2023-ami-*-kernel-6.1-x86_64"]
     }
     filter {
         name = "virtualization-type"
@@ -22,7 +22,7 @@ resource "aws_instance" "ec2"{
 }
 
 resource "aws_s3_bucket" "bucket" {
-    bucket = var.bucket_name
+    bucket = "${var.bucket_name}-vimala-2026"
     tags = {
         Name = "terraform-s3-bucket"
     }
